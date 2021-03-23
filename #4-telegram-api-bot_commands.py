@@ -76,8 +76,8 @@ def splice_command (text, offset, length):
     return b
 
 def handle_command (command, messageData):
-    userchatid = newmessage['message']['chat']['id']
-    username = newmessage['message']['chat']['first_name']
+    userchatid = messageData['message']['chat']['id']
+    username = messageData['message']['chat']['first_name']
 
     if command == "/sayhi":
         send_message(userchatid, "Hi! I'm a Telegram-Bot. Everytime someone sends the command '/sayhi', I am forced to say 'Hi!' back. So, there you go:\nHi, " + username + "!")
