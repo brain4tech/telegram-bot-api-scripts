@@ -45,15 +45,20 @@ def send_message (chatId, message):
 
 while True:
     newmessage = update (requestURL)
+    
+    try:
 
-    if newmessage != False:
-        userchatid = newmessage['message']['chat']['id']
-        usertext = newmessage['message']['text']
-        username = newmessage['message']['chat']['first_name']
+        if newmessage != False:
+            userchatid = newmessage['message']['chat']['id']
+            usertext = newmessage['message']['text']
+            username = newmessage['message']['chat']['first_name']
 
-        if usertext.lower() == "hello":
-            send_message(userchatid, "Hi " + username)
-        else:
-            send_message(userchatid, "You said: " + usertext)
+            if usertext.lower() == "hello":
+                send_message(userchatid, "Hi " + username)
+            else:
+                send_message(userchatid, "You said: " + usertext)
+    
+    except Exception:
+        pass
 
     sleep (1)
