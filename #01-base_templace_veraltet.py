@@ -1,3 +1,5 @@
+# Diese Version des Basisscripts ist veraltet. Bitte verwende die zweite Version :D
+
 import requests
 from time import sleep
 
